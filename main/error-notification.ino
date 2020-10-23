@@ -5,13 +5,13 @@
  * @param time Specifies on/off interval in milliseconds
  * 
  */
-void blink(int count, int time)
+void blink(int count)
 {
     for (int i = 0; i < count; i++)
     {
         digitalWrite(LED, LOW);
-        delay(time);
+        delay(200);
         digitalWrite(LED, HIGH);
-        delay(time);
+        delay(200);
     }
 }
