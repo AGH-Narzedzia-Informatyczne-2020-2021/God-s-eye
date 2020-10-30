@@ -17,13 +17,16 @@ mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
 
 //give access to public files
 app.use(express.static('public'));
+//json 
+app.use(express.json());
+
 
 //set view engine to ejs
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) =>{
-    res.redirect('/login');
-    // res.render('index', { title: 'Home'});
+    // res.redirect('/login');
+    res.render('index', { title: 'Home'});
 });
 
 app.use(authRoutes);
