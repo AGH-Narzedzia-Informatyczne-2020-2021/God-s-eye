@@ -1,3 +1,14 @@
+/**
+ * @file main.ino
+ * @author God's eye team
+ * @brief Main code of God's eye - sniffing device that can locate people
+ * @version 0.1
+ * @date 2020-11-02
+ * 
+ * @copyright Copyright (c) 2020
+ * 
+ */
+
 #include "./defines.hpp"
 
 void setup()
