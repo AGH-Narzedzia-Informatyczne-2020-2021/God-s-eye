@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes')
-
+const cookieParser = require('cookie-parser');
+const { requireAuth } = require('./middleware/authMiddleware');
 //create app
 const app = express();
 
@@ -19,17 +20,16 @@ mongoose.connect(dbURL, {useNewUrlParser: true, useUnifiedTopology: true})
 app.use(express.static('public'));
 //json 
 app.use(express.json());
-
+//cookies
+app.use(cookieParser());
 
 //set view engine to ejs
 app.set('view engine', 'ejs');
 
-app.get('/', (req, res) =>{
-    // res.redirect('/login');
-    res.render('index', { title: 'Home'});
-});
+app.get('/', requireAuth, (req, res) => res.render('index', { title: 'Home'}));
 
 app.use(authRoutes);
+
 
 //redirect every not matching request to 404 page
 app.use((req, res) => {

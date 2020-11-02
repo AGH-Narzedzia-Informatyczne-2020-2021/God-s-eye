@@ -1,24 +1,22 @@
 <%- include('./partials/head.ejs') %>
-<body>  
+<body>
+    <%- include('./partials/nav.ejs') %>
     <form class="login_form">
             <h2>Hash your password</h2>
             <label for="email"><input type="text" name="email" placeholder="email" required/></label>
-            <div class="email error"></div>
             <label for="password"><input type="password" name="password" placeholder="password" required/></label>
-            <div class="password error"></div>
+            <div class="error"></div>
             <button>Hash</button>
     </form>
     <script>
         const form = document.querySelector('form');
-        const emailError = document.querySelector('.email.error');
-        const passwordError = document.querySelector('.password.error');
+        const error = document.querySelector('.error');
 
         form.addEventListener('submit', async (e)=>{
             e.preventDefault();
 
             //reset errors
-            emailError.textContent='';
-            passwordError.textContent='';
+            error.textContent='';
             
             //get values form form
             const email = form.email.value;
@@ -30,17 +28,14 @@
                     headers: {'Content-Type': 'application/json'}
                 });
                 const data = await res.json();
-                if(data.errors){
-                    emailError.textContent = data.errors.email;
-                    passwordError.textContent = data.errors.password;
-                }
                 if(data.user){
                     location.assign('/');
                 }
+                else {
+                    error.textContent = "This email does not exist!";
+                }
             }
-            catch (err) {
-                console.log(err);
-            }
+            catch (err) {}
         });
     </script>
     <%- include('./partials/footer.ejs') %>
