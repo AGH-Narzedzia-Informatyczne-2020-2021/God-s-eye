@@ -9,6 +9,8 @@
  * 
  */
 
+#include "defines.hpp"
+
 void setup()
 {
     // code...
