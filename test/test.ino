@@ -1,7 +1,7 @@
 /**
  * @file test.ino
  * @author Piotr Sokołowski (psokolowski@student.agh.edu.pl)
- * @brief Firmware to test all functions of God's eye device
+ * @brief Firmware to test basic functions of God's eye device
  * @version 0.1
  * @date 2020-11-02
  * 
