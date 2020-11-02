@@ -10,7 +10,7 @@ Wyobraź sobie narzędzie, przed którym nie da się ukryć :unlock:. Informatyc
 
 To narzędzie pozwalające na monitorowanie bezprzewodowego ruchu sieciowego :satellite:, a co za tym idzie, również śledzenie i identyfikację urządzeń oraz, z pewnym prawdopodobieństwem, ich właścicieli :pouting_face:.
 
-Na _Oko Boga_ składa się wiele niewielkich urządzeń (o wymiarach 20mm x 25mm) zbierających rozgłaszane siecią Wi-Fi dane.
+Na **_Oko Boga_** składa się wiele niewielkich urządzeń (o wymiarach 20mm x 25mm) zbierających rozgłaszane siecią Wi-Fi dane.
 
 ## :bulb: Sposób działania 
 
