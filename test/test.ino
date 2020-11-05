@@ -20,7 +20,7 @@ void setup()
     WiFi.mode(WIFI_OFF);     // For some reasons, Wi-fi should be turned off before any actions
     pinMode(LED, OUTPUT);    // Set LED as output
     digitalWrite(LED, HIGH); // Turn LED off
-    Serial.begin(9600);      // Enable serial connection at baudrate 9600
+    Serial.begin(115200);      // Enable serial connection at baudrate 115200
     Serial.println();        // After boot there are some chars, so let's make empty line before test
     Serial.println();
     WiFi.mode(WIFI_STA);
