@@ -1,0 +1,115 @@
+body
+{
+    font-family: 'Lato', sans-serif;
+    background: #161515;
+    color: white;
+}
+.main
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 150px;
+    font-size: 18px;
+}
+.login_form h2
+{
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+.login_form
+{
+    text-align: center;
+    margin: 300px auto 0 auto;
+    width: 25%;
+}
+.login_form input
+{
+    box-sizing: border-box;
+    height: 42px;
+    width: 250px;
+    font-size: 16px;
+    padding: 10px 5px;
+    border-radius: 10px;
+    border: 2px solid #eaeaea;
+    margin-top: 10px;
+    color: #161516;
+}
+.login_form input:focus
+{
+    border: 2px solid #f4511e;
+    outline-style: none;
+}
+.login_form button
+{
+    box-sizing: border-box;
+    height: 42px;
+    background:#f4511e;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    font-size: 16px;
+    padding: 10px 20px;
+    opacity: 0.7;
+}
+.login_form button:focus
+{
+    outline-style: none;
+    opacity: 30%;
+}
+.login_form button:hover
+{
+    cursor: pointer;
+    transition: 0.4s;
+    opacity: 1;
+}
+.login_form label
+{
+    font-size: 20px;
+}
+.footer
+{
+    color: #161515;
+    position: fixed;
+    background: #e0b24f;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    padding: 5px 0;
+    text-align: center;
+}
+.error
+{
+    color: purple;
+    margin-top: 10px;
+}
+.error
+{
+    color: purple;
+    margin-top: 10px;
+}
+.menu
+{
+    list-style-type: none;
+    width: 600px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+}
+.menu li
+{
+    display: inline-block;
+    padding: 10px;
+}
+.menu li a
+{
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+.menu li a:hover
+{
+    color: #e0b24f;
+    transition: 0.6s;
+}
