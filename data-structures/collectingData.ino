@@ -4,20 +4,11 @@
 typedef struct target Target;
 
 Target targets[tarNum];
-/**for(int i = 0; i < ; i++)
-{
-    targets[i] = {
-        macAdress[6] = MACdecoder(string adress,**macAdress);
-        IPHosts[255][4] = ...;
-        encType = ...;
-        PWR = ...;
-        beacons = ...;
-        firstSeen = ...;
-        lastSeen = ...;
-    }
 
-}
-
+// int macAdress[6];
+// MACdecoder(adress,macAdress);
+// int IPHosts[255][4];
+// IPdecoder(IPaddresses, IPHosts);
 
 String getValue(String data, char separator, int index)
 {
@@ -36,7 +27,7 @@ String getValue(String data, char separator, int index)
   return found>index ? data.substring(strIndex[0], strIndex[1]) : "";
 }
 
-void IPdecoder(string IPaddresses[],**IParray)
+void IPdecoder(String IPaddresses[],**IParray[255][4])
 {
     for(int j = 0; j < sizeof(IPaddresses); j++){
         for(int i = 0; i < 4; i++)
@@ -56,4 +47,17 @@ void MACdecoder(string MACadress,**MACarray)
 
 }
 
+/**for(int i = 0; i < tarNum; i++)
+{
+    targets[i] = {
+        macAdress; 
+        IPHosts;
+        encType = ...;
+        PWR = ...;
+        beacons = ...;
+        firstSeen = ...;
+        lastSeen = ...;
+    }
+
+}
 */
