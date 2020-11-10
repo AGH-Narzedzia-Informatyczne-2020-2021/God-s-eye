@@ -5,10 +5,6 @@ typedef struct target Target;
 
 Target targets[tarNum];
 
-// int macAdress[6];
-// MACdecoder(adress,macAdress);
-// int IPHosts[255][4];
-// IPdecoder(IPaddresses, IPHosts);
 
 String getValue(String data, char separator, int index)
 {
@@ -27,30 +23,35 @@ String getValue(String data, char separator, int index)
   return found>index ? data.substring(strIndex[0], strIndex[1]) : "";
 }
 
-void IPdecoder(String IPaddresses[],**IParray[255][4])
+void IPdecoder(string IPaddresses[], IParray)
 {
     for(int j = 0; j < sizeof(IPaddresses); j++){
         for(int i = 0; i < 4; i++)
         {
-            (*IParray)[j][i] = getValue(IPaddresses[j],":",i);
+            IParray[j][i] = getValue(IPaddresses[j],":",i);
         }
     }
 
 }
 
-void MACdecoder(string MACadress,**MACarray)
+void MACdecoder(string MACadress, MACarray)
 {
     for(int i = 0; i < 4; i++)
     {
-        (*MACarray)[i] = getValue(MACaddress,":",i);
+        MACarray[i] = getValue(MACaddress,"-",i);
     }
 
 }
 
-/**for(int i = 0; i < tarNum; i++)
+// int macAdress[6];
+// MACdecoder(adress,macAdress);
+// int IPHosts[255][4];
+// IPdecoder(IPaddresses, IPHosts);
+
+/**for(int i = 0; i < ; i++)
 {
     targets[i] = {
-        macAdress; 
+        macAdress;
         IPHosts;
         encType = ...;
         PWR = ...;
@@ -60,4 +61,5 @@ void MACdecoder(string MACadress,**MACarray)
     }
 
 }
+
 */
