@@ -7,7 +7,7 @@ Target targets[tarNum];
 /**for(int i = 0; i < ; i++)
 {
     targets[i] = {
-        macAdress[6] = MACdecoder(string adress,**macAdress);
+        macAdress[6] = MACdecoder(string adress,macAdress);
         IPHosts[255][4] = ...;
         encType = ...;
         PWR = ...;
@@ -36,22 +36,22 @@ String getValue(String data, char separator, int index)
   return found>index ? data.substring(strIndex[0], strIndex[1]) : "";
 }
 
-void IPdecoder(string IPaddresses[],**IParray)
+void IPdecoder(string IPaddresses[], IParray)
 {
     for(int j = 0; j < sizeof(IPaddresses); j++){
         for(int i = 0; i < 4; i++)
         {
-            (*IParray)[j][i] = getValue(IPaddresses[j],":",i);
+            IParray[j][i] = getValue(IPaddresses[j],":",i);
         }
     }
 
 }
 
-void MACdecoder(string MACadress,**MACarray)
+void MACdecoder(string MACadress, MACarray)
 {
     for(int i = 0; i < 4; i++)
     {
-        (*MACarray)[i] = getValue(MACaddress,":",i);
+        MACarray[i] = getValue(MACaddress,"-",i);
     }
 
 }
