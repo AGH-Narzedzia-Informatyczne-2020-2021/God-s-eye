@@ -7,7 +7,6 @@
 struct target
 {
     byte macAdress[6];
-    byte ipHosts[255][4];
     String encType;
     int PWR;
     int beacons;

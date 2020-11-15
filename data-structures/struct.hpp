@@ -1,5 +1,5 @@
 /**
- * @file struct.ino
+ * @file struct.ihpp
  * @author Tom2rec
  * @date 02.11.2020
  */
