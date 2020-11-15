@@ -12,5 +12,4 @@ struct target
     int beacons;
     time_t firstSeen;
     time_t lastSeen;
-
 };
