@@ -11,6 +11,6 @@ struct target
     int PWR;
     int beacons;
     time_t firstSeen;
-    time_time lastSeen;
+    time_t lastSeen;
 
 };
