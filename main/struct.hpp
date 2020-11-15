@@ -6,7 +6,7 @@
 
 struct target
 {
-    byte macAdress[6];
+    uint8_t broadcastAddress[6];
     String encType;
     int PWR
     int beacons;
@@ -14,4 +14,3 @@ struct target
     time_time lastSeen;
 
 };
-
