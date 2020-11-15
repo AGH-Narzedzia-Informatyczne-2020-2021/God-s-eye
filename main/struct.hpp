@@ -8,7 +8,7 @@ struct target
 {
     uint8_t broadcastAddress[6];
     int encType;
-    int PWR
+    int PWR;
     int beacons;
     time_t firstSeen;
     time_time lastSeen;
