@@ -5,7 +5,7 @@
  */
 
 struct target
-{{}
+{
     byte macAdress[6];
     String encType;
     int PWR
@@ -14,5 +14,4 @@ struct target
     time_time lastSeen;
 
 };
-
 
