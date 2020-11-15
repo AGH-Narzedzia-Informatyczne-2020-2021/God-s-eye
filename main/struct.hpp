@@ -5,13 +5,14 @@
  */
 
 struct target
-{
+{{}
     byte macAdress[6];
     String encType;
-    int PWR;
+    int PWR
     int beacons;
     time_t firstSeen;
-    time_t lastSeen;
+    time_time lastSeen;
+
 };
 
 
