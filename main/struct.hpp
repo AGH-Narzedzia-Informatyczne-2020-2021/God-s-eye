@@ -7,7 +7,7 @@
 struct target
 {
     uint8_t broadcastAddress[6];
-    String encType;
+    int encType;
     int PWR
     int beacons;
     time_t firstSeen;
