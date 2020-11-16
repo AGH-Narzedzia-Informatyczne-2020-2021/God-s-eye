@@ -9,8 +9,6 @@
  * 
  */
 
-#include "./defines.hpp"
-
 void setup()
 {
     pinMode(LED, OUTPUT);
