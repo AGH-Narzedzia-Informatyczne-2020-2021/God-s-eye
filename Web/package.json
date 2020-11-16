@@ -13,6 +13,9 @@
     "validator": "^13.1.17"
   },
   "devDependencies": {},
+  "engines": {
+    "node": "10.19.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
