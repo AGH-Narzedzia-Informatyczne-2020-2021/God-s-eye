@@ -1,7 +1,10 @@
 <nav>
     <ul class='menu'>
+        <% if (user) {%>
+        <li><a class="uEmail" href="#">Welcome, <%= user.email %></a></li>
         <li><a href="/hash">Change your password</a></li>
         <li><a href="/">Back to home</a></li>
         <li><a href="/logout">Logout</a></li>
+        <% } %>
     </ul>
 </nav>

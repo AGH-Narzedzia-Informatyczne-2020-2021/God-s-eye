@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes')
 const cookieParser = require('cookie-parser');
-const { requireAuth } = require('./middleware/authMiddleware');
+const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 //create app
 const app = express();
 
@@ -25,7 +25,7 @@ app.use(cookieParser());
 
 //set view engine to ejs
 app.set('view engine', 'ejs');
-
+app.get('*', checkUser);
 app.get('/', requireAuth, (req, res) => res.render('index', { title: 'Home'}));
 
 app.use(authRoutes);
