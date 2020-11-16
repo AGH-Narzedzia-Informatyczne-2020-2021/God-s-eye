@@ -12,6 +12,9 @@
 #include <ESP8266WiFi.h>
 #include "./defines.hpp"
 
+// Define built-in LED on GPIO2 pin
+#define LED 2
+
 String ssid = "MW40V_D69E",
        passwd = "91530386";
 
