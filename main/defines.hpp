@@ -8,6 +8,3 @@
  * @copyright Copyright (c) 2020
  * 
  */
-
-// Define built-in LED on GPIO2 pin
-#define LED 2
