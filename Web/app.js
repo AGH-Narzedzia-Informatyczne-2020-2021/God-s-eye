@@ -1,4 +1,4 @@
-const express = require('express');
+//conflict
 const mongoose = require('mongoose');
 const authRoutes = require('./routes/authRoutes')
 const cookieParser = require('cookie-parser');
