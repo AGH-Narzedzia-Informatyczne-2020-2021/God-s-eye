@@ -1,3 +1,11 @@
+## Gists
+
+- Piotr Sokołowski
+    1. [Tic tac toe](https://gist.github.com/sokoloowski/aa95cbfa15a8e3381088ea4b315e0acc)
+    2. [Arduino sketch](https://gist.github.com/sokoloowski/93365f6dec794736d367893299704e8f)
+
+---
+
 Wyobraź sobie narzędzie do śledzenia każdego użytkownika urządzenia z siecią Wi-Fi. Każdego posiadacza smartfona :iphone:, laptopa :computer:, tabletu.
 
 Wyobraź sobie, że istnieje narzędzie :hammer_and_wrench:, które jest w stanie namierzyć każdego. Również Ciebie :warning:.
