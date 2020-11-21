@@ -3,6 +3,10 @@
 - Piotr Sokołowski
     1. [Tic tac toe](https://gist.github.com/sokoloowski/aa95cbfa15a8e3381088ea4b315e0acc)
     2. [Arduino sketch](https://gist.github.com/sokoloowski/93365f6dec794736d367893299704e8f)
+    
+- Tomasz Turek
+    1. [Arduino string analysis](https://gist.github.com/Tom2rec/074ad085250204601162ca165ba2a2a0)
+    2. [C interpreter](https://gist.github.com/Tom2rec/1af55bd9ed095bea9dee750d39ec5d1f)
 
 ---
 
