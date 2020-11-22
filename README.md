@@ -7,7 +7,11 @@
 - Tomasz Turek
     1. [Arduino string analysis](https://gist.github.com/Tom2rec/074ad085250204601162ca165ba2a2a0)
     2. [C interpreter](https://gist.github.com/Tom2rec/1af55bd9ed095bea9dee750d39ec5d1f)
-
+    
+- Sebastian Zdybiowski
+    1. [TicTacToe in C and with AI](https://gist.github.com/echofoxtrotpl/526b586335e66119963576c293078a3b)
+    2. [Matrix multiplication in C](https://gist.github.com/echofoxtrotpl/9bb0fc5c281c48b96d911276e786dcc4)
+    
 ---
 
 Wyobraź sobie narzędzie do śledzenia każdego użytkownika urządzenia z siecią Wi-Fi. Każdego posiadacza smartfona :iphone:, laptopa :computer:, tabletu.
