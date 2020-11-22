@@ -21,8 +21,8 @@ userSchema.statics.login = async function(email, password){
     else throw Error('incorect email');
 }
 
-//static method to hash password
-userSchema.statics.hash = async function(email, password){
+//static method to change password
+userSchema.statics.password = async function(email, password){
     const salt = await bcrypt.genSalt();
     const hashed = await bcrypt.hash(password, salt);
     const user = await this.findOneAndUpdate({email: email}, {password: hashed}, {new: true});
