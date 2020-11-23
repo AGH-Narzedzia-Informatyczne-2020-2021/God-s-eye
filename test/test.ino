@@ -25,8 +25,9 @@ void loop()
     // Let's display on monitor everything, what it gets!
     if (Serial.available() > 0)
     {
-        enableLED();                       // On data recieve, turn LED on
-        Serial.print(Serial.readString()); // Print recieved string
-        disableLED();                      // Turn LED off
+        enableLED();                             // On data recieve, turn LED on
+        String userString = Serial.readString(); // Save user string to variable
+        Serial.print(userString);                // Print recieved string
+        disableLED();                            // Turn LED off
     }
 }
