@@ -26,8 +26,7 @@ void loop()
 #pragma region Wi - Fi
     enableWifi();
     Serial.println("Wi-fi enabled successfully");
-    scanAndSort();
-    // Autoconnection to open network here
+    connectToNetwork();
     disableWifi();
     Serial.println("Disabled Wi-Fi");
 #pragma endregion
