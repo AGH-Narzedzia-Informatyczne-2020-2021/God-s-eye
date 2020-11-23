@@ -10,7 +10,6 @@
  */
 
 #include <ESP8266WiFi.h>
-#include "./defines.hpp"
 
 void setup()
 {
