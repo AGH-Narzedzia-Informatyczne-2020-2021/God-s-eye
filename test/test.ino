@@ -34,22 +34,11 @@ void loop()
 
 #pragma region Serial connection
     Serial.println("Testing serial connection...");
-    Serial.println("Type \"exit\" to leave this test");
-    Serial.println("Type \"shutdown\" to disable device");
+    Serial.println(" Type \"exit\" to leave this test");
+    Serial.println(" Type \"shutdown\" to disable device");
     while (true)
     {
-        if (Serial.available() > 0)
-        {
-            enableLED();                                      // On data recieve, turn LED on
-            String userString = Serial.readStringUntil('\n'); // Save user string to variable
-            Serial.print("    > ");                           // Print indentation
-            Serial.println(userString);                       // Print recieved string
-            disableLED();                                     // Turn LED off
-            if (userString == "exit")
-                break;
-            if (userString == "shutdown")
-                ESP.deepSleep(0);
-        }
+        readFromSerial();
     }
     Serial.println("Leaving serial connection test...");
 #pragma endregion
