@@ -9,8 +9,6 @@
  * 
  */
 
-#include <ESP8266WiFi.h>
-
 void setup()
 {
     WiFi.mode(WIFI_OFF);     // For some reasons, Wi-fi should be turned off before any actions
