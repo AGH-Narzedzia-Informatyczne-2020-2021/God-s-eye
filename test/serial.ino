@@ -10,6 +10,15 @@
  */
 
 /**
+ * @brief Print horizontal separator
+ * 
+ */
+void separate()
+{
+    Serial.print("\n----------------------------------------------------------------------------------\n");
+}
+
+/**
  * @brief Listening for user input. This function runs endless loop.
  * Enter `exit` to leave this mode or `shutdown` to disable device.
  * 
