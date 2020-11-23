@@ -18,10 +18,21 @@ void setup()
     Serial.println();
     enableWifi();
     Serial.println("Wi-fi enabled successfully");
+    Serial.println("Going to testing loop...");
 }
 
 void loop()
 {
+#pragma region Wi - Fi
+    enableWifi();
+    Serial.println("Wi-fi enabled successfully");
+    // Searching networks here
+    // Autoconnection to open network here
+    disableWifi();
+    Serial.println("Disabled Wi-Fi");
+#pragma endregion
+
+#pragma region Serial connection
     Serial.println("Testing serial connection...");
     Serial.println("Type \"exit\" to leave this test");
     Serial.println("Type \"shutdown\" to disable device");
@@ -41,6 +52,8 @@ void loop()
         }
     }
     Serial.println("Leaving serial connection test...");
+#pragma endregion
+
     Serial.println("Testing finished! It will be started again in 5 seconds...");
     delay(5000);
 }
