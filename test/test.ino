@@ -16,21 +16,23 @@ void setup()
     Serial.begin(115200); // Enable serial connection at baudrate 115200
     Serial.println();     // After boot there are some chars, so let's make empty line before test
     Serial.println();
-    enableWifi();
-    Serial.println("Wi-fi enabled successfully");
     Serial.println("Going to testing loop...");
 }
 
 void loop()
 {
+    separate();
+
 #pragma region Wi - Fi
     enableWifi();
     Serial.println("Wi-fi enabled successfully");
-    // Searching networks here
+    scanAndSort();
     // Autoconnection to open network here
     disableWifi();
     Serial.println("Disabled Wi-Fi");
 #pragma endregion
+
+    separate();
 
 #pragma region Serial connection
     Serial.println("Testing serial connection...");
@@ -39,6 +41,8 @@ void loop()
     readFromSerial();
     Serial.println("Leaving serial connection test...");
 #pragma endregion
+
+    separate();
 
     Serial.println("Testing finished! It will be started again in 5 seconds...");
     delay(5000);
