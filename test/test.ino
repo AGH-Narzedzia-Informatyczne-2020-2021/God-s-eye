@@ -36,10 +36,7 @@ void loop()
     Serial.println("Testing serial connection...");
     Serial.println(" Type \"exit\" to leave this test");
     Serial.println(" Type \"shutdown\" to disable device");
-    while (true)
-    {
-        readFromSerial();
-    }
+    readFromSerial();
     Serial.println("Leaving serial connection test...");
 #pragma endregion
 

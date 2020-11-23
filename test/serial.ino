@@ -10,22 +10,26 @@
  */
 
 /**
- * @brief Listening for user input.
- * Enter `exit` to leave this mode or `shutdown` to disable device
+ * @brief Listening for user input. This function runs endless loop.
+ * Enter `exit` to leave this mode or `shutdown` to disable device.
  * 
  */
 void readFromSerial()
 {
-    if (Serial.available() > 0)
+    while (true)
     {
-        enableLED();                                      // On data recieve, turn LED on
-        String userString = Serial.readStringUntil('\n'); // Save user string to variable
-        Serial.print("    > ");                           // Print indentation
-        Serial.println(userString);                       // Print recieved string
-        disableLED();                                     // Turn LED off
-        if (userString == "exit")
-            break;
-        if (userString == "shutdown")
-            ESP.deepSleep(0);
+
+        if (Serial.available() > 0)
+        {
+            enableLED();                                      // On data recieve, turn LED on
+            String userString = Serial.readStringUntil('\n'); // Save user string to variable
+            Serial.print("    > ");                           // Print indentation
+            Serial.println(userString);                       // Print recieved string
+            disableLED();                                     // Turn LED off
+            if (userString == "exit")
+                break;
+            if (userString == "shutdown")
+                ESP.deepSleep(0);
+        }
     }
 }
