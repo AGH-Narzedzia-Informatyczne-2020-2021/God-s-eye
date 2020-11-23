@@ -22,12 +22,25 @@ void setup()
 
 void loop()
 {
-    // Let's display on monitor everything, what it gets!
-    if (Serial.available() > 0)
+    Serial.println("Testing serial connection...");
+    Serial.println("Type \"exit\" to leave this test");
+    Serial.println("Type \"shutdown\" to disable device");
+    while (true)
     {
-        enableLED();                             // On data recieve, turn LED on
-        String userString = Serial.readString(); // Save user string to variable
-        Serial.print(userString);                // Print recieved string
-        disableLED();                            // Turn LED off
+        if (Serial.available() > 0)
+        {
+            enableLED();                                      // On data recieve, turn LED on
+            String userString = Serial.readStringUntil('\n'); // Save user string to variable
+            Serial.print("    > ");                           // Print indentation
+            Serial.println(userString);                       // Print recieved string
+            disableLED();                                     // Turn LED off
+            if (userString == "exit")
+                break;
+            if (userString == "shutdown")
+                ESP.deepSleep(0);
+        }
     }
+    Serial.println("Leaving serial connection test...");
+    Serial.println("Testing finished! It will be started again in 5 seconds...");
+    delay(5000);
 }
