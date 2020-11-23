@@ -11,13 +11,12 @@
 
 void setup()
 {
-    WiFi.mode(WIFI_OFF);  // For some reasons, Wi-fi should be turned off before any actions
     setupLED();           // Set LED as output
     disableLED();         // Turn LED off
     Serial.begin(115200); // Enable serial connection at baudrate 115200
     Serial.println();     // After boot there are some chars, so let's make empty line before test
     Serial.println();
-    WiFi.mode(WIFI_STA);
+    enableWifi();
     Serial.println("Wi-fi enabled successfully");
 }
 

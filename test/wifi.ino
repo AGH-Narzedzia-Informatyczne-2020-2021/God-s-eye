@@ -10,3 +10,14 @@
  */
 
 #include <ESP8266WiFi.h>
+
+void disableWifi()
+{
+    WiFi.mode(WIFI_OFF);   
+}
+
+void enableWifi()
+{
+    disableWifi();
+    WiFi.mode(WIFI_STA);
+}
