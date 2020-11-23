@@ -11,11 +11,19 @@
 
 #include <ESP8266WiFi.h>
 
+/**
+ * @brief Disable Wi-Fi
+ * 
+ */
 void disableWifi()
 {
-    WiFi.mode(WIFI_OFF);   
+    WiFi.mode(WIFI_OFF);
 }
 
+/**
+ * @brief Enable Wi-Fi
+ * 
+ */
 void enableWifi()
 {
     disableWifi();
