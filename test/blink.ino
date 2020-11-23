@@ -12,6 +12,15 @@
 #define LED 2
 
 /**
+ * @brief Sets LED pin as output - run it once in `setup()`
+ * 
+ */
+void setupLED()
+{
+    pinMode(LED, OUTPUT);
+}
+
+/**
  * @brief Enabling on-board LED
  * 
  */
