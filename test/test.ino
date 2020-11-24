@@ -9,48 +9,40 @@
  * 
  */
 
-#include <ESP8266WiFi.h>
-#include "./defines.hpp"
-
-String ssid = "MW40V_D69E",
-       passwd = "91530386";
-
 void setup()
 {
-    WiFi.mode(WIFI_OFF);     // For some reasons, Wi-fi should be turned off before any actions
-    pinMode(LED, OUTPUT);    // Set LED as output
-    digitalWrite(LED, HIGH); // Turn LED off
-    Serial.begin(115200);      // Enable serial connection at baudrate 115200
-    Serial.println();        // After boot there are some chars, so let's make empty line before test
+    setupLED();           // Set LED as output
+    disableLED();         // Turn LED off
+    Serial.begin(115200); // Enable serial connection at baudrate 115200
+    Serial.println();     // After boot there are some chars, so let's make empty line before test
     Serial.println();
-    WiFi.mode(WIFI_STA);
-    Serial.println("Wi-fi enabled successfully");
-    WiFi.begin(ssid, password);
-    Serial.print("Connecting to ");
-    Serial.print(ssid);
-    Serial.println(" network");
-    while (WiFi.status() != WL_CONNECTED)
-    {
-        Serial.print(".");
-        digitalWrite(2, LOW);
-        delay(250);
-        digitalWrite(2, HIGH);
-        delay(250);
-    }
-    Serial.println();
-    Serial.print("Connected successfully to ");
-    Serial.print(ssid);
-    Serial.println(" network");
-    Serial.println();
+    Serial.println("Going to testing loop...");
 }
 
 void loop()
 {
-    // Let's display on monitor everything, what it gets!
-    if (Serial.available() > 0)
-    {
-        digitalWrite(LED, LOW);            // On data recieve, turn LED on
-        Serial.print(Serial.readString()); // Print recieved string
-        digitalWrite(LED, HIGH);           // Turn LED off
-    }
+    separate();
+
+#pragma region Wi - Fi
+    enableWifi();
+    Serial.println("Wi-fi enabled successfully");
+    connectToNetwork();
+    disableWifi();
+    Serial.println("Disabled Wi-Fi");
+#pragma endregion
+
+    separate();
+
+#pragma region Serial connection
+    Serial.println("Testing serial connection...");
+    Serial.println(" Type \"exit\" to leave this test");
+    Serial.println(" Type \"shutdown\" to disable device");
+    readFromSerial();
+    Serial.println("Leaving serial connection test...");
+#pragma endregion
+
+    separate();
+
+    Serial.println("Testing finished! It will be started again in 5 seconds...");
+    delay(5000);
 }
