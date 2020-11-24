@@ -47,6 +47,18 @@ void loop()
 
     separate();
 
+#pragma region Flash button
+    while (true)
+    {
+        Serial.println("Press and hold FLASH button to exit this test");
+        if (isBtnDown())
+            break;
+        delay(1000);
+    }
+#pragma endregion
+
+    separate();
+
     Serial.println("Testing finished! It will be started again in 5 seconds...");
     delay(5000);
 }
