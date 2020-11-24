@@ -16,6 +16,8 @@ void setup()
     Serial.begin(115200); // Enable serial connection at baudrate 115200
     Serial.println();     // After boot there are some chars, so let's make empty line before test
     Serial.println();
+    Serial.print("Device's MAC address: ");
+    Serial.println(macAddr());
     Serial.println("Going to testing loop...");
 }
 
