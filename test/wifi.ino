@@ -42,6 +42,16 @@ void enableWifi()
 }
 
 /**
+ * @brief Get MAC address of device
+ * 
+ * @return String MAC address
+ */
+String macAddr()
+{
+    return WiFi.macAddress();
+}
+
+/**
  * @brief Checks if device is connected to Wi-Fi
  * 
  * @return true When connected to Wi-Fi network
