@@ -82,7 +82,7 @@ void connectToNetwork()
             {
                 Serial.println("");
                 Serial.println("Connection Successful!");
-                Serial.println("Your device IP address is ");
+                Serial.print("Your device IP address is ");
                 Serial.println(WiFi.localIP());
             }
             else
