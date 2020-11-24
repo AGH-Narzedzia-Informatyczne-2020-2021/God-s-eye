@@ -10,30 +10,30 @@ void setup(){
 
 void  loop(){  
   getPCtime();   // try to get time sync from pc        
-  if(DateTime.available()) { // update clocks if time has been synced
+  if(DateTime.available()) { 
     unsigned long prevtime = DateTime.now();
-    while( prevtime == DateTime.now() )  // wait for the second to rollover
+    while( prevtime == DateTime.now() )  
       ;
-    DateTime.available(); //refresh the Date and time properties
-    digitalClockDisplay( );   // update digital clock
+    DateTime.available(); 
+    digitalClockDisplay( );   
 
-    // send our time to an app listening on the serial port
-    Serial.print( TIME_HEADER,BYTE); // this is the header for the current time
+    /
+    Serial.print( TIME_HEADER,BYTE); 
     Serial.println(DateTime.now());      
   }
 }
 
 void getPCtime() {
-  // if time available from serial port, sync the DateTime library
-  while(Serial.available() >=  TIME_MSG_LEN ){  // time message
+  
+  while(Serial.available() >=  TIME_MSG_LEN ){  
     if( Serial.read() == TIME_HEADER ) {        
       time_t pctime = 0;
       for(int i=0; i < TIME_MSG_LEN -1; i++){  
         char c= Serial.read();          
         if( c >= '0' && c <= '9')  
-          pctime = (10 * pctime) + (c - '0') ; // convert digits to a number            
+          pctime = (10 * pctime) + (c - '0') ;            
       }  
-      DateTime.sync(pctime);   // Sync DateTime clock to the time received on the serial port
+      DateTime.sync(pctime);   
     }  
   }
 }
@@ -52,7 +52,7 @@ void digitalClockDisplay(){
 }
 
 void printDigits(byte digits){
-  // utility function for digital clock display: prints colon and leading 0
+  // utility function for digital clock display
   Serial.print(":");
   if(digits < 10)
     Serial.print('0');
