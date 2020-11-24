@@ -27,6 +27,8 @@ void loop()
     enableWifi();
     Serial.println("Wi-fi enabled successfully");
     connectToNetwork();
+    if (isWifiConnected())
+        httpPostRequest("http://vps.smarthive.pl:8081/", "");
     disableWifi();
     Serial.println("Disabled Wi-Fi");
 #pragma endregion
