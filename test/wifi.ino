@@ -9,12 +9,16 @@
  * 
  */
 
+/* Both libraries come with ESP8266 support in Arduino IDE. Address given below
+must be added in Arduino IDE settings, and esp8266 package must be installed in
+board manager
+https://arduino.esp8266.com/stable/package_esp8266com_index.json */
 #include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 
-#define WIFI_DELAY        500
-#define MAX_SSID_LEN      32
-#define MAX_CONNECT_TIME  30000
-
+#define WIFI_DELAY 500
+#define MAX_SSID_LEN 32
+#define MAX_CONNECT_TIME 30000
 
 char ssid[MAX_SSID_LEN] = "";
 
@@ -35,6 +39,29 @@ void enableWifi()
 {
     disableWifi();
     WiFi.mode(WIFI_STA);
+}
+
+/**
+ * @brief Get MAC address of device
+ * 
+ * @return String MAC address
+ */
+String macAddr()
+{
+    return WiFi.macAddress();
+}
+
+/**
+ * @brief Checks if device is connected to Wi-Fi
+ * 
+ * @return true When connected to Wi-Fi network
+ * @return false When not connected to Wi-Fi
+ */
+bool isWifiConnected()
+{
+    if (WiFi.status() == WL_CONNECTED)
+        return true;
+    return false;
 }
 
 /**
@@ -65,7 +92,7 @@ void connectToNetwork()
             {
                 Serial.println("");
                 Serial.println("Connection Successful!");
-                Serial.println("Your device IP address is ");
+                Serial.print("Your device IP address is ");
                 Serial.println(WiFi.localIP());
             }
             else
@@ -125,4 +152,22 @@ void scanAndSort()
             }
         }
     }
+}
+
+/**
+ * @brief Making a HTTP POST JSON request to server
+ * 
+ * @param url server full address
+ * @param jsonData data to be sent
+ * @return HTTP response code
+ */
+int httpPostRequest(String url, String jsonData)
+{
+    HTTPClient http;
+    http.begin(url);
+    http.addHeader("Content-Type", "application/json");
+    auto httpCode = http.POST(jsonData);
+    Serial.println(http.getString());
+    http.end();
+    return httpCode;
 }
