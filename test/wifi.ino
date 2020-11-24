@@ -42,6 +42,19 @@ void enableWifi()
 }
 
 /**
+ * @brief Checks if device is connected to Wi-Fi
+ * 
+ * @return true When connected to Wi-Fi network
+ * @return false When not connected to Wi-Fi
+ */
+bool isWifiConnected()
+{
+    if (WiFi.status() == WL_CONNECTED)
+        return true;
+    return false;
+}
+
+/**
  * @brief Autoconnecting to the best network.
  * 
  */
