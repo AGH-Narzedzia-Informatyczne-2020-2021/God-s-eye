@@ -28,6 +28,7 @@ app.set('view engine', 'ejs');
 app.get('*', checkUser);
 app.get('/', requireAuth, (req, res) => res.render('index', { title: 'Home'}));
 
+
 app.use(authRoutes);
 
 

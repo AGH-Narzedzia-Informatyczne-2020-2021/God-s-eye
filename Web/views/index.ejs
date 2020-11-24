@@ -2,11 +2,87 @@
 <html lang="en">
 <!-- include header -->
 <%- include('./partials/head.ejs') %>
+<link href="/dashboard.css" rel="stylesheet">
+</head>
 <body>
-    <%- include('./partials/nav.ejs') %>
-    <div class="main">
-        <p class="test">Something will be here soon! :)<p>
+    <body>
+        <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" href="/">God's Eye Project</a>
+      <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <a class="nav-link" href="/logout">Sign out</a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="container-fluid">
+      <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+          <div class="sidebar-sticky pt-3">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="/">
+                  <span data-feather="home"></span>
+                  Dashboard <span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/password">
+                  <span data-feather="users"></span>
+                  Change password
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://cloud.mongodb.com/v2/5f9b083208c3a242361fb28d#clusters" target="_blank">
+                  <span data-feather="database"></span>
+                  Database
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://github.com/AGH-Narzedzia-Informatyczne/God-s-eye" target="_blank">
+                  <span data-feather="github"></span>
+                  GitHub
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://trello.com/b/NENAhhyp/tablica" target="_blank">
+                  <span data-feather="trello"></span>
+                  Trello
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://agh-narzedzia-inf.slack.com/archives/C01E2TGQ9V4" target="_blank">
+                  <span data-feather="slack"></span>
+                  Slack
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-md-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h2>Dashboard</h2>
+          </div>
+    
+          <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
+    
+        </main>
+      </div>
     </div>
     <%- include('./partials/footer.ejs') %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script>
+    /* globals Chart:false, feather:false */
+
+    (function () {'use strict'
+        feather.replace();
+    })()
+
+    </script>
 </body>
 </html>

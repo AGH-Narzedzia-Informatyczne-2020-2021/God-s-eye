@@ -7,8 +7,8 @@ const router = Router();
 
 router.get('/login', authController.login_get);
 router.post('/login', authController.login_post);
-router.get('/hash', requireAuth, authController.hash_get);
-router.post('/hash', authController.hash_post);
+router.get('/password', requireAuth, authController.password_get);
+router.post('/password', authController.password_post);
 router.get('/logout', authController.logout_get);
 
 
