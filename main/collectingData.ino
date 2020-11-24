@@ -1,6 +1,9 @@
 #include struct.ino
-#define tarNum = 100; // Number of hosts in array 
-
+#define tarNum = 100; // Number of hosts in array
+#define TIME_MSG_LEN  11 
+#define TIME_HEADER  255
+#include <DateTime.h>
+#include <DateTimeStrings.h>
 typedef struct target Target;
 
 Target targets[tarNum];
@@ -43,23 +46,22 @@ void MACdecoder(string MACadress, MACarray)
 
 }
 
-// int macAdress[6];
-// MACdecoder(adress,macAdress);
-// int IPHosts[255][4];
-// IPdecoder(IPaddresses, IPHosts);
+int macAdress[6];
+MACdecoder(adress,macAdress);
+int IPHosts[255][4];
+IPdecoder(IPaddresses, IPHosts);
 
-/**for(int i = 0; i < ; i++)
-{
-    targets[i] = {
-        macAdress;
-        IPHosts;
-        encType = ...;
-        PWR = ...;
-        beacons = ...;
-        firstSeen = ...;
-        lastSeen = ...;
-    }
 
-}
-
+/**    for(int i = 0; i < ; i++){
+        targets[i] = {
+            macAdress;
+            IPHosts;
+            encType = ...;
+            PWR = ...;
+            beacons = ...;
+            firstSeen = ...;
+            lastSeen = ...;
+       }
 */
+
+
