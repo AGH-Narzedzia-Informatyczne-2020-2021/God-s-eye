@@ -143,3 +143,21 @@ void scanAndSort()
         }
     }
 }
+
+/**
+ * @brief Making a HTTP POST JSON request to server
+ * 
+ * @param url server full address
+ * @param jsonData data to be sent
+ * @return HTTP response code
+ */
+int httpPostRequest(String url, String jsonData)
+{
+    HTTPClient http;
+    http.begin(url);
+    http.addHeader("Content-Type", "application/json");
+    auto httpCode = http.POST(jsonData);
+    Serial.println(http.getString());
+    http.end();
+    return httpCode;
+}
