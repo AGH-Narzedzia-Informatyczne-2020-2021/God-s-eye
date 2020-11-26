@@ -1,4 +1,3 @@
-//file for sign up
 const mongoose = require('mongoose');
 
 //hash password

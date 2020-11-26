@@ -1,4 +1,6 @@
 const User = require('../models/User');
+const Data = require('../models/Data');
+
 const jwt = require('jsonwebtoken');
 
 
@@ -7,6 +9,20 @@ const createToken = (id) =>{
     return jwt.sign({id}, 'my secret', {
         expiresIn: maxAge
     });
+};
+
+module.exports.data_get = (req, res) => {
+    res.render('data', { title: 'Data'});
+};
+module.exports.data_post = async (req, res) =>{
+    const {data1, data2} = req.body;
+    try {
+        const record = await Data.create({data1, data2});
+        res.status(200).json(record);
+    }
+    catch (err) {
+        res.status(400).json({err});;
+    }
 };
 
 module.exports.login_get = (req, res) => {
