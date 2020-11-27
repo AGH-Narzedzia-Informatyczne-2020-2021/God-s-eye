@@ -22,6 +22,8 @@ Wyobraź sobie narzędzie, przed którym nie da się ukryć :unlock:. Informatyc
 
 # :eye: God's Eye
 
+[![time tracker](https://wakatime.com/badge/github/AGH-Narzedzia-Informatyczne/God-s-eye.svg)](https://wakatime.com/badge/github/AGH-Narzedzia-Informatyczne/God-s-eye)
+
 ## :clipboard: O projekcie 
 
 To narzędzie pozwalające na monitorowanie bezprzewodowego ruchu sieciowego :satellite:, a co za tym idzie, również śledzenie i identyfikację urządzeń oraz, z pewnym prawdopodobieństwem, ich właścicieli :pouting_face:.
