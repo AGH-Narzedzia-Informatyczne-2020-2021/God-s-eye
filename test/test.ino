@@ -30,7 +30,8 @@ void loop()
     Serial.println("Wi-fi enabled successfully");
     connectToNetwork();
     if (isWifiConnected())
-        httpPostRequest("http://vps.smarthive.pl:8081/", "");
+        // TODO: a function to improve saving data to JSON
+        httpPostRequest("http://gods-eye-project.herokuapp.com/data", "{\"data1\":\"cos\",\"data2\":\"cos innego\"}");
     disableWifi();
     Serial.println("Disabled Wi-Fi");
 #pragma endregion
