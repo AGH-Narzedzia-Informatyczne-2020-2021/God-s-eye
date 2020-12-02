@@ -9,12 +9,30 @@
  * 
  */
 
+int board[3][3] = {
+    {0, 0, 0},
+    {0, 0, 0},
+    {0, 0, 0}};
+
 void setup()
 {
-    // code...
+    Serial.begin(115200);
+}
+
+int readDataFromUser()
+{
+    while (true)
+    {
+        if (Serial.available() > 0)
+        {
+            char input = Serial.read();
+            if (input >= '1' && input <= '9')
+                return input - '0';
+        }
+    }
 }
 
 void loop()
 {
-    // code...
+    Serial.println(readDataFromUser());
 }
