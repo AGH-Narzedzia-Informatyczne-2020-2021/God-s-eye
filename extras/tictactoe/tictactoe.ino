@@ -32,10 +32,35 @@ int readDataFromUser()
     }
 }
 
+void printBoard(int board[3][3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            char symbol;
+            if (board[i][j] == -1)
+                symbol = 'x';
+            else if (board[i][j] == 0)
+                symbol = ' ';
+            else if (board[i][j] == 1)
+                symbol = 'o';
+            Serial.print(" ");
+            Serial.print(symbol);
+            Serial.print(" ");
+            if (j != 2)
+                Serial.print("|");
+        }
+        Serial.println();
+        if (i != 2)
+            Serial.println("---+---+---");
+    }
+}
+
 void loop()
 {
     Serial.println(readDataFromUser());
-
+    printBoard(board);
     /*
     int x, y;
     printBoard(board);
