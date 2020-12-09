@@ -35,4 +35,26 @@ int readDataFromUser()
 void loop()
 {
     Serial.println(readDataFromUser());
+
+    /*
+    int x, y;
+    printBoard(board);
+    int field = readDataFromUser();
+    if (isFieldEmpty(board, field))
+        makeMove(board, field, -1);
+    printBoard(board);
+    if (estimateBoard(board) == AI_LOSE)
+    {
+        Serial.println("Wygrales! Aby zagrac jeszcze raz, wcisnij przycisk RESET");
+        ESP.deepSleep(0);
+    }
+    generateMoveTree(board, &x, &y);
+    board[x][y] = 1;
+    printBoard(board);
+    if (estimateBoard(board) == AI_WIN)
+    {
+        Serial.println("Przegrales! Aby zagrac jeszcze raz, wcisnij przycisk RESET");
+        ESP.deepSleep(0);
+    }
+    */
 }
