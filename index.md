@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+Postanowiliśmy stworzyć coś niebanalnego, co mogłoby zmienić świat, a także styl naszego życia. Każdy z nas korzysta w mniejszym lub większym stopniu z urządzeń obsługujących bezprzewodowe sieci Wi-Fi. Zdecydowana większość wie, że urządzenia mające połączenie z internetem da się inwigilować. Ale czy chociaż połowa tych osób ma świadomość, że włączone Wi-Fi w telefonie, nawet bez podłączenia do sieci, również pozwala na identyfikację i śledzenie użytkownika?
 
-You can use the [editor on GitHub](https://github.com/AGH-Narzedzia-Informatyczne/God-s-eye/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+## Motywacja
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+Jako zespół, chcieliśmy stworzyć projekt pozwalający na zlokalizowanie ludzi za pomocą urządzeń telekomunikacyjnych, które przy sobie noszą. Samo tworzenie takiego narzędzia i odpowiedniego oprogramowania pozwala wiele się dowiedzieć o działaniu sieci bezprzewodowych. Stworzyliśmy więc 5 niewielkich urządzeń pozwalających na monitorowanie otoczenia sieciowego - każde urządzenie składa się w dużym uproszczeniu z modułu bezprzewodowego Wi-Fi i złącza micro USB. Dzięki swoim niewielkim wymiarom i zasięgowi do 15 metrów, stanowi wspaniałe narzędzie dla służb, umożliwiając śledzenie trasy danego użytkownika telefonu komórkowego lub otrzymanie informacji o nowym (nieznanym) urządzeniu na danym obszarze.
 
-### Markdown
+## Inspiracja
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Narzędzie o nazwie “Oko Boga” pojawiło się w filmie “Szybcy i wściekli 7”. Pozwalało ono na dostęp do każdej kamery podłączonej do sieci Internet, z kamerami w telefonach komórkowych włącznie. Dzięki temu możliwe było zlokalizowanie każdego, kto znalazł się w polu widzenia takiej kamery. Przeniesienie takiego projektu do rzeczywistości byłoby trudne, gdyby chcieć wykorzystywać kamery i sieć Internet. Z pomocą przyszedł znaleziony w internecie [projekt pozwalający na śledzenie ponad 500 osób](https://hackaday.io/project/174644-how-i-tracked-500-people-with-esp8266). Połączenie działającego projektu i inspiracji z filmu doprowadziło do rozpoczęcia pracy nad urządzeniami zbierającymi dane. Te dane, po przetworzeniu ich na serwerze, pozwoliłyby na określenie położenia urządzenia z dokładnością przynajmniej do 30 metrów, a w sytuacjach optymalnych, nawet do jednego metra, metodą podobną do lokalizacji użytkownika sieci komórkowej.
 
-```markdown
-Syntax highlighted code block
+## Wykorzystane technologie
 
-# Header 1
-## Header 2
-### Header 3
+Urządzenia pracują pod kontrolą mikrokontrolera ESP8266EX zawartego w module ESP-12F. Programowany jest on za pomocą języka bazującego na C++, ale przeznaczonego dla płytek Arduino. Tym samym nasz projekt jest zgodny ze wszystkimi płytkami działającymi na modułach ESP-12E i ESP-12F. Serwer obsługujący dane nadchodzące z modułów pracuje na NodeJS, a otrzymane dane przechowywane są w MongoDB.
 
-- Bulleted
-- List
+## Jak korzystać z projektu?
 
-1. Numbered
-2. List
+Ponieważ urządzenie jest przeznaczone do śledzenia ludzi, ewentualna infrastruktura nie może zostać udostępniona do użytku publicznego. Jednak można stworzyć własną infrastrukturę składającą się z przynajmniej jednego urządzenia i serwera WWW z bazą danych. By całość działała poprawnie, urządzenie musi znajdować się w zasięgu otwartej sieci Wi-Fi, aby móc przesyłać zebrane dane.
 
-**Bold** and _Italic_ and `Code` text
+## Jak działa aplikacja?
 
-[Link](url) and ![Image](src)
-```
+### Urządzenie monitorujące otoczenie sieciowe
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+Moduł, działając w trybie monitora, zbiera wszelkie informacje o urządzeniach dostępnych w najbliższej okolicy. Po określonym czasie przełącza się w tryb klienta, umożliwiający połączenie z siecią Wi-Fi. Dzięki odpowiednio zaimplementowanemu algorytmowi, urządzenie automatycznie łączy się z najmocniejszą niezabezpieczoną siecią, niezależnie od jej nazwy. Po pomyślnej komunikacji z serwerem - przesłaniu danych i otrzymaniu odpowiedniej odpowiedzi zwrotnej - pętla programu rozpoczyna się od nowa, urządzenie odłącza się od sieci Wi-Fi i przełącza się w tryb monitora.
 
-### Jekyll Themes
+### Serwer przetwarzający dane
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/AGH-Narzedzia-Informatyczne/God-s-eye/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+_Omówienie części serwerowej_
 
-### Support or Contact
+## Omówienie interfejsu
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+## Co się udało?
+
+W chwili pisania tego dokumentu, mamy działający program testowy sprawdzający łączność z siecią Wi-Fi, komunikację z serwerem, komunikację z użytkownikiem i działanie przycisku. Oprócz tego, działa serwer WWW odbierający zapytania od urządzeń.
+
+## Co się nie udało?
+
+## Co można udoskonalić?
+
+Należy poprawić komunikację urządzeń z serwerem, by uniknąć sytuacji, gdzie urządzenie nagle zostaje bez dostępu do sieci. W przypadku tworzenia większej sieci takich urządzeń, dobrym rozwiązaniem byłoby wykorzystanie protokołu ESP-NOW, pozwalającego na komunikację bezpośrednio między urządzeniami. Mogłoby to pozwolić na wyeliminowanie konieczności korzystania z sieci Internet, wykorzystując jedno z urządzeń jako odbiornik danych. Tym samym istniałaby możliwość lokalizacji tylko jednej osoby, bez naruszania prywatności innych osób w okolicy.
