@@ -4,9 +4,13 @@ Postanowiliśmy stworzyć coś niebanalnego, co mogłoby zmienić świat, a tak�
 
 Jako zespół, chcieliśmy stworzyć projekt pozwalający na zlokalizowanie ludzi za pomocą urządzeń telekomunikacyjnych, które przy sobie noszą. Samo tworzenie takiego narzędzia i odpowiedniego oprogramowania pozwala wiele się dowiedzieć o działaniu sieci bezprzewodowych. Stworzyliśmy więc 5 niewielkich urządzeń pozwalających na monitorowanie otoczenia sieciowego - każde urządzenie składa się w dużym uproszczeniu z modułu bezprzewodowego Wi-Fi i złącza micro USB. Dzięki swoim niewielkim wymiarom i zasięgowi do 15 metrów, stanowi wspaniałe narzędzie dla służb, umożliwiając śledzenie trasy danego użytkownika telefonu komórkowego lub otrzymanie informacji o nowym (nieznanym) urządzeniu na danym obszarze.
 
+![airodump-ng](images/airodump.png)
+
 ## Inspiracja
 
 Narzędzie o nazwie “Oko Boga” pojawiło się w filmie “Szybcy i wściekli 7”. Pozwalało ono na dostęp do każdej kamery podłączonej do sieci Internet, z kamerami w telefonach komórkowych włącznie. Dzięki temu możliwe było zlokalizowanie każdego, kto znalazł się w polu widzenia takiej kamery. Przeniesienie takiego projektu do rzeczywistości byłoby trudne, gdyby chcieć wykorzystywać kamery i sieć Internet. Z pomocą przyszedł znaleziony w internecie [projekt pozwalający na śledzenie ponad 500 osób](https://hackaday.io/project/174644-how-i-tracked-500-people-with-esp8266). Połączenie działającego projektu i inspiracji z filmu doprowadziło do rozpoczęcia pracy nad urządzeniami zbierającymi dane. Te dane, po przetworzeniu ich na serwerze, pozwoliłyby na określenie położenia urządzenia z dokładnością przynajmniej do 30 metrów, a w sytuacjach optymalnych, nawet do jednego metra, metodą podobną do lokalizacji użytkownika sieci komórkowej.
+
+![Lokalizowanie użytkownika sieci GSM](images/lokalizowanie.png)
 
 ## Wykorzystane technologie
 
@@ -27,6 +31,8 @@ Moduł, działając w trybie monitora, zbiera wszelkie informacje o urządzeniac
 _Omówienie części serwerowej_
 
 ## Omówienie interfejsu
+
+![Interfejs tekstowy urządzenia](images/interfejs.png)
 
 ## Co się udało?
 
