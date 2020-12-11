@@ -32,6 +32,8 @@ _Omówienie części serwerowej_
 
 ## Omówienie interfejsu
 
+Ponieważ urządzenie nie posiada wyświetlacza, komunikacja i interakcja odbywa się za pomocą interfejsu szeregowego, z wykorzystaniem kabla microUSB. Jest to jednak rozwiązanie przydatne jedynie do przetestowania urządzenia, jego skonfigurowania i ewentualnego szukania błędów w działaniu. Dane zbierane przez narzędzie prezentowane są w aplikacji internetowej.
+
 ![Interfejs tekstowy urządzenia](images/interfejs.png)
 
 ## Co się udało?
