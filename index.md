@@ -1,5 +1,3 @@
-## tl;dr
-
 Postanowiliśmy stworzyć coś niebanalnego, co mogłoby zmienić świat, a także styl naszego życia. Każdy z nas korzysta w mniejszym lub większym stopniu z urządzeń obsługujących bezprzewodowe sieci Wi-Fi. Zdecydowana większość wie, że urządzenia mające połączenie z internetem da się inwigilować. Ale czy chociaż połowa tych osób ma świadomość, że włączone Wi-Fi w telefonie, nawet bez podłączenia do sieci, również pozwala na identyfikację i śledzenie użytkownika?
 
 ## Motywacja
