@@ -36,12 +36,14 @@ Ponieważ urządzenie nie posiada wyświetlacza, komunikacja i interakcja odbywa
 
 ![Interfejs tekstowy urządzenia](images/interfejs.png)
 
-## Co się udało?
+## Wnioski
+
+### Co się udało?
 
 W chwili pisania tego dokumentu, mamy działający program testowy sprawdzający łączność z siecią Wi-Fi, komunikację z serwerem, komunikację z użytkownikiem i działanie przycisku. Oprócz tego, działa serwer WWW odbierający zapytania od urządzeń.
 
-## Co się nie udało?
+### Co się nie udało?
 
-## Co można udoskonalić?
+### Co można udoskonalić?
 
 Należy poprawić komunikację urządzeń z serwerem, by uniknąć sytuacji, gdzie urządzenie nagle zostaje bez dostępu do sieci. W przypadku tworzenia większej sieci takich urządzeń, dobrym rozwiązaniem byłoby wykorzystanie protokołu ESP-NOW, pozwalającego na komunikację bezpośrednio między urządzeniami. Mogłoby to pozwolić na wyeliminowanie konieczności korzystania z sieci Internet, wykorzystując jedno z urządzeń jako odbiornik danych. Tym samym istniałaby możliwość lokalizacji tylko jednej osoby, bez naruszania prywatności innych osób w okolicy.
