@@ -28,7 +28,32 @@ Moduł, działając w trybie monitora, zbiera wszelkie informacje o urządzeniac
 
 ### Serwer przetwarzający dane
 
-_Omówienie części serwerowej_
+#### Nasza aplikacja jest dostępna w wersji rozwojowej [tutaj](https://gods-eye-project.herokuapp.com/).
+
+Komunikacja z serwerem odbywa się przy użyciu Node.js. Dlaczego akurat ta technologia? Otóż jeden z nas chciał się jej nauczyć i była to świetna okazja do stworzenia potrzebnego oprogramowania wraz z jednoczesną możliwością zagłębienia się w jej tajniki.
+
+#### Aplikacja posiada wiele zaimplementowanych funkcji, między innymi:
+
+1.  Logowanie się do panelu administracyjnego
+2.  Zarządzanie swoim kontem (m.in. zmiana hasła)
+3.  Panel administracyjny
+4.  Komunikacja z urządzeniami zbierającymi dane
+
+#### Logowanie do panelu administracyjnego
+
+Logowanie zostało zrealizowane z myślą aby dane zbierane na serwerze nie wpadły w niepowołane ręce. Serwer komunikuje się z bazą danych (MongoDB), gdzie przy użyciu loginu i hasła użytkownika odnajduje go w bazie. W przypadku powodzenia, tworzony jest token JWT, który pozwala na długotrwałe zalogowanie, bez konieczności powtarzania procesu przy każdym zamknięciu przeglądarki. Jego treść zawiera pewien element identyfikujący każdego z użytkowników, dzięki czemu wiadomo, kto jest zalogowany.
+
+#### Zarządzanie swoim kontem
+
+Jedną z funkcjonalności jest możliwość zmiany hasła na koncie użytkownika. Proces ten odbywa się poprzez wypełnienie formularza, po czym serwer hashuje nowe hasło i podmienia je w bazie. Dzięki temu, nasze dane są bezpieczne i nawet w przypadku wycieku zawartości bazy danych, dane te są bezużyteczne.
+
+#### Panel administracyjny
+
+Panel administracyjny aktualnie jest w fazie rozwoju. Pojawiły się w nim zakładki odpowiedzialne za funkcje, które planujemy zaimplementować, tak aby całość była w jednym miejscu i była uporządkowana. Planujemy utworzyć system, który będzie przetwarzał dane zbierane przez nasze urządzenia i wyświetlał je w formie graficznej, np. jako lokalizacja na mapie.
+
+#### Komunikacja z urządzeniami zbierającymi dane
+
+Na dzień pisania tej strony dokumentacji, urządzenia poprawnie komunikują się z serwerem, po czym wysyłają dane jako JSON, metodą POST request, finalnie umieszczając je w bazie danych.
 
 ## Omówienie interfejsu
 
@@ -43,6 +68,8 @@ Ponieważ urządzenie nie posiada wyświetlacza, komunikacja i interakcja odbywa
 W chwili pisania tego dokumentu, mamy działający program testowy sprawdzający łączność z siecią Wi-Fi, komunikację z serwerem, komunikację z użytkownikiem i działanie przycisku. Oprócz tego, działa serwer WWW odbierający zapytania od urządzeń.
 
 ### Co się nie udało?
+
+Niestety, nie zdążyliśmy przygotować działającej sieci urządzeń, ani oprogramowania, które pozwalałoby śledzić urządzenia.
 
 ### Co można udoskonalić?
 
