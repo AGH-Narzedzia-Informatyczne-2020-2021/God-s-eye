@@ -55,7 +55,7 @@ Jedną z funkcjonalności jest możliwość zmiany hasła na koncie użytkownika
 
 Panel administracyjny aktualnie jest w fazie rozwoju. Pojawiły się w nim zakładki odpowiedzialne za funkcje, które planujemy zaimplementować, tak aby całość była w jednym miejscu i była uporządkowana. Planujemy utworzyć system, który będzie przetwarzał dane zbierane przez nasze urządzenia i wyświetlał je w formie graficznej, np. jako lokalizacja na mapie.
 
-![Panel administracyjny](images/dashboard)
+![Panel administracyjny](images/dashboard.png)
 
 #### Komunikacja z urządzeniami zbierającymi dane
 
