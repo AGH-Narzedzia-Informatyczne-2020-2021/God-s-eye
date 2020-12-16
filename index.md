@@ -43,13 +43,19 @@ Komunikacja z serwerem odbywa się przy użyciu Node.js. Dlaczego akurat ta tech
 
 Logowanie zostało zrealizowane z myślą aby dane zbierane na serwerze nie wpadły w niepowołane ręce. Serwer komunikuje się z bazą danych (MongoDB), gdzie przy użyciu loginu i hasła użytkownika odnajduje go w bazie. W przypadku powodzenia, tworzony jest token JWT, który pozwala na długotrwałe zalogowanie, bez konieczności powtarzania procesu przy każdym zamknięciu przeglądarki. Jego treść zawiera pewien element identyfikujący każdego z użytkowników, dzięki czemu wiadomo, kto jest zalogowany.
 
+![Ekran logowania](images/signin.png)
+
 #### Zarządzanie swoim kontem
 
 Jedną z funkcjonalności jest możliwość zmiany hasła na koncie użytkownika. Proces ten odbywa się poprzez wypełnienie formularza, po czym serwer hashuje nowe hasło i podmienia je w bazie. Dzięki temu, nasze dane są bezpieczne i nawet w przypadku wycieku zawartości bazy danych, dane te są bezużyteczne.
 
+![Zmiana hasła](images/passwd.png)
+
 #### Panel administracyjny
 
 Panel administracyjny aktualnie jest w fazie rozwoju. Pojawiły się w nim zakładki odpowiedzialne za funkcje, które planujemy zaimplementować, tak aby całość była w jednym miejscu i była uporządkowana. Planujemy utworzyć system, który będzie przetwarzał dane zbierane przez nasze urządzenia i wyświetlał je w formie graficznej, np. jako lokalizacja na mapie.
+
+![Panel administracyjny](images/dashboard)
 
 #### Komunikacja z urządzeniami zbierającymi dane
 
